@@ -21,9 +21,9 @@ class Avatar extends StatelessWidget {
 
   Avatar(
       {Key? key,
-      this.type: 'normal',
+      this.type = 'normal',
       this.size,
-      this.shape: 'round',
+      this.shape = 'round',
       this.color,
       this.iconColor,
       this.custom,

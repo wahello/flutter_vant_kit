@@ -33,7 +33,8 @@ class _DemoImageWall extends State<DemoImageWall> {
           images: images,
           count: 6,
           onUpload: (files) async {
-            return Utils.toast(files.toString());
+            Utils.toast(files.map((file) => file.name).join(", "));
+            return [];
           },
           onChange: (image) {},
         ),
@@ -43,7 +44,8 @@ class _DemoImageWall extends State<DemoImageWall> {
           count: 6,
           multiple: true,
           onUpload: (files) async {
-            return Utils.toast(files.toString());
+            Utils.toast(files.map((file) => file.name).join(", "));
+            return [];
           },
           onChange: (image) {},
         ),
@@ -52,7 +54,8 @@ class _DemoImageWall extends State<DemoImageWall> {
           images: images,
           imageFit: BoxFit.contain,
           onUpload: (files) async {
-            return Utils.toast(files.toString());
+            Utils.toast(files.map((file) => file.name).join(", "));
+            return [];
           },
           onChange: (image) {},
         )

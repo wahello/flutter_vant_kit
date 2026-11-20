@@ -14,10 +14,10 @@ class ContactCard extends StatefulWidget {
   final Function()? onClick;
   ContactCard(
       {Key? key,
-      this.type: 'add',
+      this.type = 'add',
       this.name,
       this.tel,
-      this.editAble: true,
+      this.editAble = true,
       this.onClick})
       : super(key: key);
   _ContactCard createState() => _ContactCard();

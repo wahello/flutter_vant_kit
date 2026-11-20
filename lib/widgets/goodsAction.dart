@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Badge;
 import 'package:flutter_vant_kit/theme/style.dart';
 import 'package:flutter_vant_kit/widgets/badge.dart';
 import 'package:flutter_vant_kit/widgets/button.dart';
@@ -164,8 +164,8 @@ class ButtonItem {
   ButtonItem(
       {this.text,
       this.color,
-      this.disabled: false,
-      this.loading: false,
+      this.disabled = false,
+      this.loading = false,
       this.onClick,
       this.customText});
 }

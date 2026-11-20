@@ -19,8 +19,8 @@ class Collapse extends StatefulWidget {
       {Key? key,
       this.name,
       required this.list,
-      this.accordion: false,
-      this.border: true,
+      this.accordion = false,
+      this.border = true,
       this.onChange})
       : super(key: key);
 

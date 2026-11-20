@@ -289,7 +289,7 @@ class PageCell extends StatelessWidget {
 }
 
 class PageScaffold extends StatelessWidget {
-  PageScaffold({this.title, this.body, this.padding: false});
+  PageScaffold({this.title, this.body, this.padding = false});
 
   final String? title;
   final Widget? body;

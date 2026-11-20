@@ -1,5 +1,5 @@
 import 'package:example/generated/i18n.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Badge;
 import 'package:flutter_vant_kit/main.dart';
 
 class DemoBadge extends StatefulWidget {

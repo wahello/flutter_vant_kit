@@ -31,10 +31,10 @@ class RadioGroup extends StatefulWidget {
       this.list,
       this.disabled,
       this.checkedColor,
-      this.inCellGroup: false,
+      this.inCellGroup = false,
       this.onChange,
       this.iconSize,
-      this.direction: Axis.vertical})
+      this.direction = Axis.vertical})
       : super(key: key);
 
   @override
@@ -115,10 +115,10 @@ class RadioItem {
 
   RadioItem(
       {this.name,
-      this.value: false,
-      this.shape: 'round',
+      this.value = false,
+      this.shape = 'round',
       this.text,
-      this.disabled: false,
-      this.iconSize: Style.checkboxSize,
-      this.checkedColor: Style.checkboxCheckedIconColor});
+      this.disabled = false,
+      this.iconSize = Style.checkboxSize,
+      this.checkedColor = Style.checkboxCheckedIconColor});
 }

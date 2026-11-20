@@ -29,5 +29,5 @@ More examples please refer [Demo](https://github.com/benjaken/flutter_vant_kit/b
 | imageFit | Picture Preview Style | `BoxFit` | `contain` |
 | uploadBtn | Custom button | `Widget` | - |
 | onChange | Triggered when after uploading a image | `Function(List<String> images)` | - |
-| onUpload | Triggered when upload the image | `Function(List<Asset> file)` | - |
+| onUpload | Triggered when upload the image | `Future<List<String>> Function(List<XFile> files)` | - |
 | onRemove | Triggered when remove the image | `Function(String url)` | - |

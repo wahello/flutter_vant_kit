@@ -29,9 +29,9 @@ class CheckboxGroup extends StatefulWidget {
       this.values,
       this.shape,
       this.list,
-      this.max: 9999,
+      this.max = 9999,
       this.onChange,
-      this.inCellGroup: false,
+      this.inCellGroup = false,
       this.disabled,
       this.checkedColor,
       this.iconSize})
@@ -125,10 +125,10 @@ class CheckItem {
 
   CheckItem(
       {this.name,
-      this.value: false,
-      this.shape: 'round',
+      this.value = false,
+      this.shape = 'round',
       this.text,
-      this.disabled: false,
-      this.iconSize: Style.checkboxSize,
-      this.checkedColor: Style.checkboxCheckedIconColor});
+      this.disabled = false,
+      this.iconSize = Style.checkboxSize,
+      this.checkedColor = Style.checkboxCheckedIconColor});
 }

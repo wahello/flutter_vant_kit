@@ -19,10 +19,10 @@ class Steps extends StatefulWidget {
   Steps(
       {Key? key,
       required this.steps,
-      this.active: 0,
-      this.direction: 'horizontal',
-      this.activeColor: Style.stepFinishLineColor,
-      this.activeIcon: Icons.check_circle,
+      this.active = 0,
+      this.direction = 'horizontal',
+      this.activeColor = Style.stepFinishLineColor,
+      this.activeIcon = Icons.check_circle,
       this.inactiveIcon})
       : assert(steps.length > 0, '步骤数量必须大于零');
 

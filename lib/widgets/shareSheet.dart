@@ -25,11 +25,11 @@ class ShareSheet {
       {Key? key,
       required this.options,
       this.title,
-      this.cancelText: '取消',
+      this.cancelText = '取消',
       this.description,
-      this.wrap: false,
-      this.wrapNumber: 4,
-      this.closeOnClickOverlay: true,
+      this.wrap = false,
+      this.wrapNumber = 4,
+      this.closeOnClickOverlay = true,
       this.onSelect,
       this.onCancel});
   show(BuildContext context) {

@@ -38,20 +38,20 @@ class Calendar {
 
   const Calendar(
       {Key? key,
-      this.type: "single",
-      this.title: "日期选择",
+      this.type = "single",
+      this.title = "日期选择",
       this.color,
       this.minDate,
       this.maxDate,
       this.defaultDate,
-      this.rowHeight: Style.calendarDayHeight,
-      this.poppable: true,
-      this.round: true,
-      this.showMark: true,
-      this.showConfirm: true,
-      this.closeOnClickOverlay: true,
-      this.confirmText: "确定",
-      this.height: Style.calendarHeight,
+      this.rowHeight = Style.calendarDayHeight,
+      this.poppable = true,
+      this.round = true,
+      this.showMark = true,
+      this.showConfirm = true,
+      this.closeOnClickOverlay = true,
+      this.confirmText = "确定",
+      this.height = Style.calendarHeight,
       this.onSelect,
       this.onConfirm})
       : assert(type == 'single' || type == 'range',
@@ -531,5 +531,5 @@ class DayItem {
   final String? info;
   final bool disabled;
 
-  DayItem({this.date, this.info, this.disabled: false});
+  DayItem({this.date, this.info, this.disabled = false});
 }

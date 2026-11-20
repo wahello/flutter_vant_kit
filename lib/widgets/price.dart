@@ -17,12 +17,12 @@ class Price extends StatelessWidget {
 
   const Price(
       {Key? key,
-      this.currency: "¥",
-      this.size: Style.priceFontSize,
+      this.currency = "¥",
+      this.size = Style.priceFontSize,
       required this.value,
-      this.color: Style.priceTextColor,
-      this.decimal: 2,
-      this.thousands: false})
+      this.color = Style.priceTextColor,
+      this.decimal = 2,
+      this.thousands = false})
       : super(key: key);
 
   @override

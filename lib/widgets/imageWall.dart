@@ -1,8 +1,6 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_vant_kit/theme/style.dart';
-import 'package:multi_image_picker/multi_image_picker.dart';
+import 'package:image_picker/image_picker.dart';
 
 //照片墙
 class ImageWall extends StatefulWidget {
@@ -28,19 +26,19 @@ class ImageWall extends StatefulWidget {
   final Function(List<String> newImages) onChange;
 
   // 监听图片上传
-  final Future<List<String>> Function(List<Asset> file) onUpload;
+  final Future<List<String>> Function(List<XFile> file) onUpload;
 
   // 删除图片后的回调
   final Function(String? removedUrl)? onRemove;
 
   const ImageWall({
     Key? key,
-    this.multiple: false,
-    this.length: 4,
-    this.count: 9,
+    this.multiple = false,
+    this.length = 4,
+    this.count = 9,
     this.images,
     this.uploadBtn,
-    this.imageFit: BoxFit.cover,
+    this.imageFit = BoxFit.cover,
     required this.onChange,
     required this.onUpload,
     this.onRemove,
@@ -52,6 +50,7 @@ class ImageWall extends StatefulWidget {
 
 class _ImageWall extends State<ImageWall> {
   List<String> images = [];
+  bool _uploading = false;
   double space = Style.imageWallItemGutter;
 
   @override
@@ -130,31 +129,62 @@ class _ImageWall extends State<ImageWall> {
 
     return InkWell(
       child: widget.uploadBtn ?? btn,
-      onTap: () async {
-        List<Asset> resultList = [];
-        try {
-          resultList = await MultiImagePicker.pickImages(
-            maxImages: widget.multiple ? widget.count - images.length : 1,
-            enableCamera: true,
-            cupertinoOptions: CupertinoOptions(takePhotoIcon: "chat"),
-            materialOptions: MaterialOptions(
-                startInAllView: true,
-                useDetailsView: true,
-                selectCircleStrokeColor: "#000000",
-                actionBarColor: "#000000"),
-          );
-        } on Exception catch (e) {
-          print(e.toString());
-        }
-        List<String> urls = await widget.onUpload(resultList);
-        if (urls.isEmpty) {
-          return;
-        }
-        setState(() {
-          images.addAll(urls);
-        });
-        widget.onChange(images);
-      },
+      onTap: _uploading ? null : _pickAndUpload,
     );
+  }
+
+  Future<void> _pickAndUpload() async {
+    if (_uploading) return;
+    setState(() => _uploading = true);
+    try {
+      final picker = ImagePicker();
+      final source = picker.supportsImageSource(ImageSource.camera)
+          ? await showModalBottomSheet<ImageSource>(
+              context: context,
+              builder: (context) {
+                return SafeArea(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ListTile(
+                        leading: const Icon(Icons.photo_library),
+                        title: const Text('Gallery'),
+                        onTap: () => Navigator.pop(context, ImageSource.gallery),
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.camera_alt),
+                        title: const Text('Camera'),
+                        onTap: () => Navigator.pop(context, ImageSource.camera),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            )
+          : ImageSource.gallery;
+      final remaining = widget.count - images.length;
+      if (!mounted || source == null || remaining <= 0) return;
+
+      final List<XFile> files;
+      if (source == ImageSource.gallery && widget.multiple && remaining > 1) {
+        files = await picker.pickMultiImage(limit: remaining);
+      } else {
+        final file = await picker.pickImage(source: source);
+        files = file == null ? [] : [file];
+      }
+      if (!mounted || files.isEmpty) return;
+
+      final urls = await widget.onUpload(files.take(remaining).toList());
+      if (!mounted || urls.isEmpty) return;
+
+      final available = widget.count - images.length;
+      if (available <= 0) return;
+      images.addAll(urls.take(available));
+      widget.onChange(images);
+    } on Exception catch (error) {
+      debugPrint('ImageWall could not pick or upload images: $error');
+    } finally {
+      if (mounted) setState(() => _uploading = false);
+    }
   }
 }

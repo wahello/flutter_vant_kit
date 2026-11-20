@@ -30,17 +30,17 @@ class Steppers extends StatefulWidget {
 
   Steppers(
       {Key? key,
-      this.value: 1,
+      this.value = 1,
       this.onChange,
-      this.min: 0,
-      this.max: 9999999,
-      this.step: 1,
-      this.size: Style.stepperButtonIconSize,
-      this.disabled: false,
-      this.disabledInput: false,
-      this.showPlus: true,
-      this.showMinus: true,
-      this.decimalLength: 0,
+      this.min = 0,
+      this.max = 9999999,
+      this.step = 1,
+      this.size = Style.stepperButtonIconSize,
+      this.disabled = false,
+      this.disabledInput = false,
+      this.showPlus = true,
+      this.showMinus = true,
+      this.decimalLength = 0,
       this.inputWidth})
       : super(key: key);
 

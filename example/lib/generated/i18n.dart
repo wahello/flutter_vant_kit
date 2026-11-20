@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 
 typedef LocaleChangeCallback = void Function(Locale locale);
 
-class I18n implements WidgetsLocalizations {
+class I18n {
   const I18n();
   static Locale? _locale;
   static bool _shouldReload = false;
@@ -28,10 +28,8 @@ class I18n implements WidgetsLocalizations {
   static LocaleChangeCallback? onLocaleChanged;
 
   static I18n? of(BuildContext context) =>
-      Localizations.of<I18n>(context, WidgetsLocalizations);
+      Localizations.of<I18n>(context, I18n);
 
-  @override
-  TextDirection get textDirection => TextDirection.ltr;
 
   /// "Basic Components"
   String get base_title => "Basic Components";
@@ -984,8 +982,6 @@ class I18n implements WidgetsLocalizations {
 class _I18n_en_US extends I18n {
   const _I18n_en_US();
 
-  @override
-  TextDirection get textDirection => TextDirection.ltr;
 }
 
 class _I18n_zh_CN extends I18n {
@@ -2249,12 +2245,10 @@ class _I18n_zh_CN extends I18n {
   String get example_notice_bar =>
       "足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。";
 
-  @override
-  TextDirection get textDirection => TextDirection.ltr;
 }
 
 class GeneratedLocalizationsDelegate
-    extends LocalizationsDelegate<WidgetsLocalizations> {
+    extends LocalizationsDelegate<I18n> {
   const GeneratedLocalizationsDelegate();
   List<Locale> get supportedLocales {
     return const <Locale>[Locale("en", "US"), Locale("zh", "CN")];
@@ -2262,7 +2256,7 @@ class GeneratedLocalizationsDelegate
 
   LocaleResolutionCallback resolution({required Locale fallback}) {
     return (Locale? locale, Iterable<Locale> supported) {
-      if (isSupported(locale!)) {
+      if (locale != null && isSupported(locale)) {
         return locale;
       }
       final Locale fallbackLocale = fallback;
@@ -2271,28 +2265,28 @@ class GeneratedLocalizationsDelegate
   }
 
   @override
-  Future<WidgetsLocalizations> load(Locale locale) {
+  Future<I18n> load(Locale locale) {
     I18n._locale ??= locale;
     I18n._shouldReload = false;
     final String lang = I18n._locale != null ? I18n._locale.toString() : "";
     final String languageCode =
         I18n._locale != null ? I18n._locale!.languageCode : "";
     if ("en_US" == lang) {
-      return SynchronousFuture<WidgetsLocalizations>(const _I18n_en_US());
+      return SynchronousFuture<I18n>(const _I18n_en_US());
     } else if ("zh_CN" == lang) {
-      return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_CN());
+      return SynchronousFuture<I18n>(const _I18n_zh_CN());
     } else if ("en" == languageCode) {
-      return SynchronousFuture<WidgetsLocalizations>(const _I18n_en_US());
+      return SynchronousFuture<I18n>(const _I18n_en_US());
     } else if ("zh" == languageCode) {
-      return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_CN());
+      return SynchronousFuture<I18n>(const _I18n_zh_CN());
     }
 
-    return SynchronousFuture<WidgetsLocalizations>(const I18n());
+    return SynchronousFuture<I18n>(const I18n());
   }
 
   @override
   bool isSupported(Locale locale) {
-    for (var i = 0; i < supportedLocales.length && locale != null; i++) {
+    for (var i = 0; i < supportedLocales.length; i++) {
       final l = supportedLocales[i];
       if (l.languageCode == locale.languageCode) {
         return true;

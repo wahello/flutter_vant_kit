@@ -27,17 +27,17 @@ class Progress extends StatefulWidget {
 
   Progress({
     Key? key,
-    this.type: "line",
-    this.inactive: false,
-    this.percentage: 0,
-    this.strokeWidth: Style.progressHeight,
-    this.showPivot: false,
-    this.color: Style.progressColor,
-    this.textColor: Style.progressPivotTextColor,
-    this.trackColor: Style.progressBackgroundColor,
+    this.type = "line",
+    this.inactive = false,
+    this.percentage = 0,
+    this.strokeWidth = Style.progressHeight,
+    this.showPivot = false,
+    this.color = Style.progressColor,
+    this.textColor = Style.progressPivotTextColor,
+    this.trackColor = Style.progressBackgroundColor,
     this.pivotText,
     this.pivotColor,
-    this.circularSize: Style.circleSize,
+    this.circularSize = Style.circleSize,
   }) : super(key: key);
 
   @override

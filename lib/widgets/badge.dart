@@ -22,11 +22,11 @@ class Badge extends StatefulWidget {
   const Badge(
       {Key? key,
       this.value,
-      this.dot: false,
+      this.dot = false,
       this.max,
-      this.color: Style.badgeBackgroundColor,
-      this.textColor: Style.badgeTextColor,
-      this.textSize: Style.badgeTextFontSize,
+      this.color = Style.badgeBackgroundColor,
+      this.textColor = Style.badgeTextColor,
+      this.textSize = Style.badgeTextFontSize,
       this.child,
       this.content})
       : super(key: key);

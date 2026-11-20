@@ -19,10 +19,10 @@ class TreeSelect extends StatefulWidget {
   TreeSelect(
       {Key? key,
       required this.list,
-      this.mainActiveIndex: 0,
+      this.mainActiveIndex = 0,
       this.activeId,
-      this.height: 300,
-      this.max: 1,
+      this.height = 300,
+      this.max = 1,
       this.onChange})
       : super(key: key);
 
@@ -134,5 +134,5 @@ class TreeItem {
   final int? id;
   final bool disabled;
 
-  TreeItem({required this.text, this.id, this.disabled: false});
+  TreeItem({required this.text, this.id, this.disabled = false});
 }

@@ -35,9 +35,9 @@ class ActionSheet {
       this.title,
       this.cancelText,
       this.description,
-      this.round: true,
+      this.round = true,
       this.closeIcon,
-      this.closeOnClickOverlay: true,
+      this.closeOnClickOverlay = true,
       this.onSelect,
       this.onCancel,
       this.onClose,
@@ -262,7 +262,7 @@ class ActionSheetItem {
   ActionSheetItem(
       {this.name,
       this.subname,
-      this.color: Colors.black,
-      this.loading: false,
-      this.disabled: false});
+      this.color = Colors.black,
+      this.loading = false,
+      this.disabled = false});
 }

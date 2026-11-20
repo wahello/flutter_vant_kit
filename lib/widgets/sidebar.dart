@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Badge;
 import 'package:flutter_vant_kit/theme/style.dart';
 import 'package:flutter_vant_kit/widgets/badge.dart';
 
@@ -10,7 +10,7 @@ class Sidebar extends StatefulWidget {
   // 当前值改变时触发
   final Function(int val)? onChange;
 
-  Sidebar({Key? key, this.active: 0, required this.list, this.onChange})
+  Sidebar({Key? key, this.active = 0, required this.list, this.onChange})
       : super(key: key);
 
   @override
@@ -91,9 +91,9 @@ class SideBarItem {
 
   SideBarItem(
       {this.title,
-      this.dot: false,
+      this.dot = false,
       this.info,
-      this.disabled: false,
+      this.disabled = false,
       this.onClick,
       this.children,
       this.content});

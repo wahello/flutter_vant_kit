@@ -18,10 +18,10 @@ class NList extends StatefulWidget {
   NList(
       {Key? key,
       this.child,
-      this.finished: false,
-      this.error: false,
-      this.offset: 30,
-      this.loadingText: "加载中...",
+      this.finished = false,
+      this.error = false,
+      this.offset = 30,
+      this.loadingText = "加载中...",
       this.finishedText,
       this.errorText,
       required this.onLoad})

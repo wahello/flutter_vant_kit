@@ -29,5 +29,5 @@ ImageWall(
 | imageFit | 图片预览样式 | `BoxFit` | `contain` |
 | uploadBtn | 自定义 button | `Widget` | - |
 | onChange | 上传后返回全部图片信息 | `Function(List<String> images)` | - |
-| onUpload | 监听图片上传 | `Function(List<Asset> file)` | - |
+| onUpload | 监听图片上传 | `Future<List<String>> Function(List<XFile> files)` | - |
 | onRemove | 删除图片后的回调 | `Function(String url)` | - |

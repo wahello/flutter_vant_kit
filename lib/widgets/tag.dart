@@ -23,12 +23,12 @@ class Tag extends StatefulWidget {
 
   Tag({
     Key? key,
-    this.type: "default",
-    this.size: "default",
-    this.text: "",
-    this.plain: false,
-    this.round: false,
-    this.mark: false,
+    this.type = "default",
+    this.size = "default",
+    this.text = "",
+    this.plain = false,
+    this.round = false,
+    this.mark = false,
     this.color,
     this.textColor,
     this.onClose,

@@ -28,13 +28,13 @@ class Pagination extends StatefulWidget {
 
   Pagination({
     Key? key,
-    this.current: 1,
-    this.totalItems: 0,
-    this.itemsPerPage: 10,
-    this.mode: "multi",
-    this.prevText: "上一页",
-    this.nextText: "下一页",
-    this.showPageSize: 5,
+    this.current = 1,
+    this.totalItems = 0,
+    this.itemsPerPage = 10,
+    this.mode = "multi",
+    this.prevText = "上一页",
+    this.nextText = "下一页",
+    this.showPageSize = 5,
     this.onChange,
   }) : super(key: key);
 

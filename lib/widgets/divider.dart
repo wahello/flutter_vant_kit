@@ -20,11 +20,11 @@ class NDivider extends StatefulWidget {
   NDivider(
       {Key? key,
       this.content,
-      this.fontColor: Style.dividerTextColor,
-      this.fontSize: Style.dividerFontSize,
+      this.fontColor = Style.dividerTextColor,
+      this.fontSize = Style.dividerFontSize,
       this.lineColor,
-      this.hairline: false,
-      this.contentPosition: 'center',
+      this.hairline = false,
+      this.contentPosition = 'center',
       this.child})
       : super(key: key);
 
@@ -39,8 +39,8 @@ class _NDivider extends State<NDivider> {
 
   @override
   void initState() {
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (widget.child != null || widget.content != null) _onLayoutDone(_);
+    WidgetsBinding.instance!.addPostFrameCallback((timestamp) {
+      if (widget.child != null || widget.content != null) _onLayoutDone(timestamp);
     });
     super.initState();
   }

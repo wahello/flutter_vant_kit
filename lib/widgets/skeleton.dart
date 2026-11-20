@@ -23,14 +23,14 @@ class Skeleton extends StatelessWidget {
 
   const Skeleton(
       {Key? key,
-      this.row: 0,
-      this.rowWidth: 1,
-      this.title: false,
-      this.titleWidth: .4,
-      this.avatar: false,
-      this.avatarSize: Style.skeletonAvatarSize,
-      this.avatarShape: "suqare",
-      this.loading: false,
+      this.row = 0,
+      this.rowWidth = 1,
+      this.title = false,
+      this.titleWidth = .4,
+      this.avatar = false,
+      this.avatarSize = Style.skeletonAvatarSize,
+      this.avatarShape = "suqare",
+      this.loading = false,
       this.child})
       : super(key: key);
 

@@ -27,13 +27,13 @@ class NumberKeyboard {
   //TODO:点击返回键时直接返回，
 
   NumberKeyboard(
-      {this.value: "",
+      {this.value = "",
       this.title,
       this.maxlength,
       this.extraKey,
       this.closeButtomText,
-      this.deleteButtonText: "删除",
-      this.showDeleteKey: true,
+      this.deleteButtonText = "删除",
+      this.showDeleteKey = true,
       this.onChange,
       this.onSubmitted,
       this.onClose

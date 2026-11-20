@@ -13,7 +13,7 @@ class CellGroup extends StatelessWidget {
   final List<Widget>? children;
 
   CellGroup(
-      {Key? key, this.title, this.children, this.border: true, this.decoration})
+      {Key? key, this.title, this.children, this.border = true, this.decoration})
       : super(key: key);
 
   buildItems(List list) {

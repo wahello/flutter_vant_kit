@@ -27,13 +27,13 @@ class ImagePreview extends StatefulWidget {
   ImagePreview(
       {Key? key,
       required this.images,
-      this.startPosition: 0,
-      this.showIndex: true,
-      this.showIndicators: false,
+      this.startPosition = 0,
+      this.showIndex = true,
+      this.showIndicators = false,
       this.swipeDuration,
-      this.closeable: false,
+      this.closeable = false,
       this.closeIcon,
-      this.closeIconPosition: 'top-right',
+      this.closeIconPosition = 'top-right',
       this.onChange,
       this.onClose});
 
@@ -127,12 +127,12 @@ Future<T?> showImagePreview<T>(
     {required BuildContext context,
     required List<Widget> images,
     int? startPosition,
-    bool showIndex: true,
-    bool? showIndicators: false,
+    bool showIndex = true,
+    bool? showIndicators = false,
     Duration? swipeDuration,
-    bool closeable: false,
+    bool closeable = false,
     IconData? closeIcon,
-    String closeIconPosition: 'top-right',
+    String closeIconPosition = 'top-right',
     Function(int val)? onChange,
     Function(int index)? onClose}) {
   return showDialog(

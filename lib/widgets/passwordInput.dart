@@ -29,10 +29,10 @@ class PasswordInput extends StatefulWidget {
 
   PasswordInput(
       {Key? key,
-      this.value: "",
-      this.length: 6,
-      this.mask: true,
-      this.hideWhenSubmitted: false,
+      this.value = "",
+      this.length = 6,
+      this.mask = true,
+      this.hideWhenSubmitted = false,
       this.info,
       this.onClick,
       this.onChange,

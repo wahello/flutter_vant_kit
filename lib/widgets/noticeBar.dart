@@ -30,14 +30,14 @@ class NoticeBar extends StatefulWidget {
   NoticeBar(
       {Key? key,
       required this.text,
-      this.color: Style.noticeBarTextColor,
-      this.background: Style.noticeBarBackgroundColor,
+      this.color = Style.noticeBarTextColor,
+      this.background = Style.noticeBarBackgroundColor,
       this.leftIcon,
       this.mode,
-      this.scrollable: true,
-      this.wrapable: false,
-      this.speed: 5,
-      this.delay: 100,
+      this.scrollable = true,
+      this.wrapable = false,
+      this.speed = 5,
+      this.delay = 100,
       this.onClose,
       this.onClick});
 

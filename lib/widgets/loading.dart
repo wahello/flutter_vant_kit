@@ -19,9 +19,9 @@ class Loading extends StatelessWidget {
       {Key? key,
       this.text,
       this.color,
-      this.size: Style.loadingSpinnerSize,
-      this.textSize: Style.loadingTextFontSize,
-      this.vertical: false,
+      this.size = Style.loadingSpinnerSize,
+      this.textSize = Style.loadingTextFontSize,
+      this.vertical = false,
       this.loading})
       : super(key: key);
 
