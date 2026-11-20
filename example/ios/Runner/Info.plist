@@ -34,7 +34,7 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>Take photos to add to the image wall.</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Why is my app authenticating using face id?</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -44,7 +44,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This sample uses the microphone to record your speech and convert it to text.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>Choose photos to add to the image wall.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
@@ -78,5 +78,9 @@
 		<string>en</string>
 		<string>zh</string>
 	</array>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 </dict>
 </plist>
